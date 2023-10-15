@@ -16,13 +16,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 $(call inherit-product, device/redmi/begonia/device.mk)
 
 # Inherit some common aosp stuff
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/miku/config/common_full_phone.mk)
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_DOESNT_LIKE_FLIPENDO := true
 
 # Inherit some extras stuff
 $(call inherit-product-if-exists, vendor/extras/extras.mk)
-
+$(call inherit-product, vendor/miku/build/product/miku_product.mk)
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -33,7 +33,7 @@ TARGET_SCREEN_WIDTH := 1080
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := begonia
-PRODUCT_NAME := aosp_begonia
+PRODUCT_NAME := miku_begonia
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := Redmi Note 8 Pro
 PRODUCT_MANUFACTURER := Xiaomi
